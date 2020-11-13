@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv=Content-Type content="text/html; charset=gb2312"><link href="favicon.ico" rel="Shortcut Icon"><LINK href="favicon.ico" rel=Bookmark>
+	
+	<title><%- config.title%></title>
+	
+	<!-- 访客统计 -->
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+	<!-- katex公式 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+	<script>
+	var katex_config = {
+		delimiters: 
+	[
+	  {left: "$$", right: "$$", display: true},
+	  {left: "$", right: "$", display: false},
+	  {left: "\\(", right: "\\)", display: false},
+	  {left: "\\[", right: "\\]", display: true}
+	]
+	};
+	</script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,katex_config)"></script>
+	
+	<!-- 百度统计 -->
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?<%- theme.baidu_tongji_key%>";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<%- css('css/style')%>
+</head>

@@ -1,0 +1,18 @@
+
+
+		<div class="ui top attached segment">
+		<h1 class="ui header"><%- post.title%></h1>
+		<%- post.content%>
+		</div>
+		
+
+		<div class="ui attached positive message">
+			<ui class="list">
+				<li>作者：<%- theme.copyright.author%></li>
+				<li>版权：<%- theme.copyright.meta%></li>
+			</ui>
+		</div>
+		
+		
+
+	<%- partial('_partial/comments') %>

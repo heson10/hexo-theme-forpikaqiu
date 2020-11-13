@@ -1,0 +1,22 @@
+# 主题配置文件
+info:
+  author: 邱福星
+  author_en: QiuFuxing
+  workplace: 武汉学而思
+  class: 三、四、五、六
+  mail: qiufuxing@tal.com
+  icp: 鄂ICP备2020019603号
+
+#导航条
+menu:
+  首页: /
+  归档: /archives
+  关于: /about
+
+# 版权信息
+copyright:
+  author: 邱福星
+  meta: 未经许可，不得用作商业用途
+
+#百度统计
+baidu_tongji_key: 1970bd18e232a11c32594f2e766a60b6

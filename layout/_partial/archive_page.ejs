@@ -1,0 +1,81 @@
+<h2 class="ui horizontal divider teal header">
+    <i class="connectdevelop icon"></i>
+    几何几何，想破脑壳
+  </h2>
+  <% if (site.posts && site.posts.length > 0) { %>
+    <div class="ui five stackable cards">
+      <% if (!page.prev) { %>
+        <% if (is_home()) { %>
+          <% site.pages.each(function(post){ %>
+            <% if (post.pin) { %>
+              <% if (page.group == undefined || post.group == page.group) { %>
+                  <%- partial('post', {post: post}) %>
+              <% } %>
+            <% } %>
+          <% }) %>
+          <% site.posts.sort('date', -1).each(function(post){ %>
+            <% if (post.pin) { %>
+              <% if (page.group == undefined || post.group == page.group) { %>
+                  <%- partial('post', {post: post}) %>
+              <% } %>
+            <% } %>
+          <% }) %>
+        <% } else if (page.posts && page.posts.length > 0) { %>
+          <% page.posts.each(function(post){ %>
+            <% if (post.pin) { %>
+                <%- partial('post', {post: post}) %>
+            <% } %>
+          <% }) %>
+        <% } %>
+      <% } %>
+      <% if (page.posts && page.posts.length > 0) { %>
+        <% page.posts.sort('date', 1).each(function(post){ %>
+          <% if (!post.pin) { %>
+            <%- partial('post', {post: post}) %>
+          <% } %>
+        <% }) %>
+      <% } %>
+    </div>
+    <br>
+    <% if (page && page.posts) { %>
+
+        <% if (page.total > 1) { %>
+          <% if (page.total == 2) { %>
+            <div class="ui right floated pagination menu">
+
+            <div class="item"><a href="/archives">1</a></div>
+            <div class="item"><a href="page/2">2</a></div>
+
+          </div>
+          <% } %>
+          <% if (page.total == 3) { %>
+            <div class="ui right floated pagination menu">
+
+            <div class="item"><a href="1">1</a></div>
+            <div class="item"><a href="2">2</a></div>
+            <div class="item"><a href="2">3</a></div>
+          </div>
+          <% } %>
+
+
+          <div class="ui right floated pagination menu">
+                <% if (page.prev != 0) { %>
+                <div class="item"><a href="<%= url_for(page.prev_link) %>">上一页</a></div>
+                 <% } %>
+  
+                 <% if (page.next != 0) { %>
+                <div class="item"><a href="<%= url_for(page.next_link) %>">下一页</a></div>
+                <% } %>
+            
+          </div>
+
+
+
+
+
+        <% } %>
+      <% } %>
+   
+  <% } %>
+
+  <br>  <br>

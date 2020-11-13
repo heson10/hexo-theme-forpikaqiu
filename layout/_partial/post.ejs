@@ -1,0 +1,16 @@
+<div class="ui card archive_part">
+    <% if(post.headimg){%>
+    <a class="image" href="<%- url_for(post.path) %>" target="_self">
+        <img  src="<%- post.headimg %>"  alt="">
+    </a>
+    <%}%>
+        <div class="content">
+            <div class="header"><a href="<%- url_for(post.path) %>" target="_self"><%- post.title %></a></div>
+        </div>
+        <div class="content">     
+            <% if (post.description) { %>
+                <p><%- post.description %></p>
+              <% } %>
+              
+        </div>
+</div>

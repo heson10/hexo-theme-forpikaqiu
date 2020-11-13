@@ -1,0 +1,50 @@
+<h2 class="ui horizontal divider teal header">
+    <i class="connectdevelop icon"></i>
+    最新问题
+  </h2>
+  <% if (site.posts && site.posts.length > 0) { %>
+    <div class="ui three stackable cards">
+      <% if (!page.prev) { %>
+        <% if (is_home()) { %>
+          <% site.pages.each(function(post){ %>
+            <% if (post.pin) { %>
+              <% if (page.group == undefined || post.group == page.group) { %>
+                  <%- partial('post', {post: post}) %>
+              <% } %>
+            <% } %>
+          <% }) %>
+          <% site.posts.sort('date', -1).each(function(post){ %>
+            <% if (post.pin) { %>
+              <% if (page.group == undefined || post.group == page.group) { %>
+                  <%- partial('post', {post: post}) %>
+              <% } %>
+            <% } %>
+          <% }) %>
+        <% } else if (page.posts && page.posts.length > 0) { %>
+          <% page.posts.each(function(post){ %>
+            <% if (post.pin) { %>
+                <%- partial('post', {post: post}) %>
+            <% } %>
+          <% }) %>
+        <% } %>
+      <% } %>
+      <% if (page.posts && page.posts.length > 0) { %>
+        <% page.posts.each(function(post){ %>
+          <% if (!post.pin) { %>
+              <%- partial('post', {post: post}) %>
+          <% } %>
+        <% }) %>
+      <% } %>
+    </div>
+    <br>
+
+   
+  <% } %>
+  
+ 
+  
+  <a class="ui right labeled icon right floated button" href="/archives" target="_self">
+    <i class="right arrow icon"></i>
+    查看全部
+  </a>
+  <br>

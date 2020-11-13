@@ -1,0 +1,12 @@
+<%- partial('_partial/head') %>
+<body>
+    <%- partial('_partial/nav') %>
+    <!-- 正文 -->
+    <div class="ui container article"  style="width: 700px">
+        <br><br><br>
+        <%- partial('_partial/article',{post: page}) %>
+    </div>
+    <br>
+    <%- partial('_partial/footer') %>
+</body>
+</html>

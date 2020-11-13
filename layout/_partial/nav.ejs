@@ -1,0 +1,38 @@
+<header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="<%- config.root%>" title="<%- config.title%>"><%- config.title%></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner">
+            
+                <% for (var i in theme.menu){ %>
+		
+                    <a class="menu-item" title="<%= i %>" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+                
+                <% } %>
+        
+            </div>
+        </div>
+    </div>
+</header>
+<header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="<%- config.title%>"><%- config.title%></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile">
+            <% for (var i in theme.menu){ %>
+		
+                <a class="menu-item" title="<%= i %>" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+            
+            <% } %>
+            
+        </div>
+    </div>
+</header>
